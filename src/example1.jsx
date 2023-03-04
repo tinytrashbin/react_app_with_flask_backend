@@ -20,6 +20,12 @@ function Example1() {
     })
   }
 
+  const try_signup = function() {
+    api("/sign_up", {}, function(backend_output) {
+      alert(JSON.stringify(backend_output))
+    })
+  }
+
   return (<>
     <Header/>
     <div className="top_box" >
@@ -28,6 +34,8 @@ function Example1() {
         Name = {name}
       </div>
       <button onClick={() => new_name()} >Click for new name</button>
+      <br/>
+      <button onClick={() => try_signup()} >Try SignUp</button>
     </div>
   </>
   );
